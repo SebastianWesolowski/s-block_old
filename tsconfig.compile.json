@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "noEmit": false,
+    "noImplicitAny": true,
+    "outDir": "./distTS",
+    "paths": {
+      "*": ["*"]
+    },
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      }
+    ],
+    "typeRoots": ["node_modules/@types"]
+  },
+  "exclude": [
+    "./node_modules",
+    "**/*.test.*",
+    "**/*.spec.*",
+    "**/*.stories.*",
+    "./src/__mocks__",
+    "./src/setupTests.ts",
+    "./src/index.tsx"
+  ],
+  "extends": "./tsconfig.json",
+  "include": ["./src/**/*"]
+}

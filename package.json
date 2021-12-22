@@ -2,25 +2,105 @@
   "name": "storybook-app",
   "version": "0.1.0",
   "private": true,
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.es.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "README.md"
+  ],
+  "scripts": {
+    "start": "react-scripts start",
+    "build:react": "react-scripts build",
+    "build": "run-s compile rollup:build",
+    "rollup:build": "rollup -c",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public",
+    "compile": "run-s compile:clear compile:buildJS compile:alias compile:copy",
+    "compile:clear": "npm run build:clear",
+    "compile:buildJS": "tsc --project ./tsconfig.compile.json --declaration",
+    "compile:alias": "tsc-alias -p ./tsconfig.compile.json",
+    "compile:copy": "copyfiles -u 1 \"./src/**/*(png|svg|scss)\"  distTS",
+    "build:clear": "rimraf distTS"
+  },
   "dependencies": {
+    "@babel/core": "^7.16.5"
+  },
+  "devDependencies": {
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "@babel/plugin-syntax-flow": "^7.14.5",
+    "@babel/plugin-transform-react-jsx": "^7.14.9",
+    "@babel/preset-react": "^7.16.5",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.1.1",
+    "@rollup/plugin-typescript": "^8.3.0",
+    "@storybook/addon-actions": "^6.4.9",
+    "@storybook/addon-essentials": "^6.4.9",
+    "@storybook/addon-links": "^6.4.9",
+    "@storybook/builder-webpack5": "^6.4.9",
+    "@storybook/manager-webpack5": "^6.4.9",
+    "@storybook/node-logger": "^6.4.9",
+    "@storybook/preset-create-react-app": "^4.0.0",
+    "@storybook/react": "^6.4.9",
+    "@testing-library/dom": "^7.21.4",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
+    "@types/jest": "^27.0.3",
+    "@types/node": "^16.11.15",
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "@types/styled-components": "^5.1.18",
+    "autoprefixer": "^10.4.0",
+    "babel-loader": "^8.0.0",
+    "copyfiles": "^2.4.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-is": "^17.0.2",
     "react-scripts": "5.0.0",
-    "web-vitals": "^2.1.0"
+    "rollup": "^2.61.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "styled-components": "^5.3.3",
+    "styled-normalize": "^8.0.7",
+    "tsc-alias": "^1.5.0",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.4",
+    "web-vitals": "^2.1.0",
+    "webpack": "^5.65.0"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "peerDependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      },
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   },
   "browserslist": {

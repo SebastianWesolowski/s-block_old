@@ -1,10 +1,10 @@
 {
-  "name": "storybook-app",
+  "name": "s-block",
   "version": "0.1.0",
-  "private": true,
-  "main": "lib/index.cjs.js",
-  "module": "lib/index.es.js",
-  "types": "lib/index.d.ts",
+  "private": false,
+  "main": "./build/index.js",
+  "module": "./build/index.es.js",
+  "types": "dist/index.d.ts",
   "files": [
     "lib",
     "README.md"
@@ -115,5 +115,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SebastianWesolowski/s-block"
+  },
+  "bugs": {
+    "url": "https://github.com/SebastianWesolowski/s-block/issues"
   }
 }

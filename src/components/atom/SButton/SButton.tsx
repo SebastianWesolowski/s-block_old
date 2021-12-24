@@ -1,5 +1,5 @@
-import React from "react";
 import { SButtonProps } from "./types";
+import "./SButton.css";
 /**
  * Primary UI component for user interaction
  */

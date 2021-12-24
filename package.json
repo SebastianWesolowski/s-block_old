@@ -1,20 +1,12 @@
 {
   "name": "s-block",
-  "version": "0.1.0",
-  "private": false,
-  "main": "./build/index.js",
-  "module": "./build/index.es.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "lib",
-    "README.md"
-  ],
+  "version": "0.1.1",
   "scripts": {
     "start": "react-scripts start",
     "build:react": "react-scripts build",
     "build": "run-s compile rollup:build",
     "rollup:build": "rollup -c",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
@@ -23,11 +15,11 @@
     "compile:buildJS": "tsc --project ./tsconfig.compile.json --declaration",
     "compile:alias": "tsc-alias -p ./tsconfig.compile.json",
     "compile:copy": "copyfiles -u 1 \"./src/**/*(png|svg|scss)\"  distTS",
-    "build:clear": "rimraf distTS"
+    "build:clear": "rimraf distTS",
+    "semantic-release": "semantic-release --branches main"
   },
   "dependencies": {
-    "@babel/core": "^7.16.5",
-    "rollup-plugin-dts": "^4.0.1"
+    "@babel/core": "^7.16.5"
   },
   "devDependencies": {
     "@babel/plugin-syntax-flow": "^7.14.5",
@@ -61,9 +53,11 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-is": "^17.0.2",
+    "react-refresh": "^0.11.0",
     "react-scripts": "5.0.0",
     "rollup": "^2.61.1",
     "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-dts": "^4.0.1",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
@@ -116,12 +110,28 @@
       "last 1 safari version"
     ]
   },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/SebastianWesolowski/s-block"
+  "private": false,
+  "main": "./lib/index.js",
+  "module": "./lib/index.es.js",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "lib",
+    "README.md"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
+  "license": "MIT",
+  "description": "S-Block React Component Library",
+  "author": "Sebastian Wesolowski",
+  "homepage": "https://github.com/SebastianWesolowski/s-block",
   "bugs": {
     "url": "https://github.com/SebastianWesolowski/s-block/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SebastianWesolowski/s-block.git"
   }
 }

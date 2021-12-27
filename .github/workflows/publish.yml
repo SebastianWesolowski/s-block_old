@@ -18,11 +18,12 @@ jobs:
         os: [ubuntu-latest, windows-latest]
 
     steps:
-      - name: 📚 checkout
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
       - name: 🟢 node
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
         - run: npm ci
         - run: npm test
+  

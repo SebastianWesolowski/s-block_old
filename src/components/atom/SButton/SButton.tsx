@@ -1,5 +1,5 @@
 import { SButtonProps } from "./types";
-import "./SButton.css";
+import "./SButton.scss";
 /**
  * Primary UI component for user interaction
  */

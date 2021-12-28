@@ -6,7 +6,7 @@
     "build:react": "react-scripts build",
     "build": "run-s compile rollup:build",
     "rollup:build": "rollup -c",
-    "test": "react-scripts test --watchAll",
+    "test": "react-scripts test --watchAll=false -ls-maxWorkers=1",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",

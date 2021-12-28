@@ -1,21 +1,24 @@
 const commonRules = {
   "import/prefer-default-export": 0,
-  "react/jsx-prop-no-spreading": 0,
+  "react/jsx-props-no-spreading": 0,
   "class-methods-use-this": 0,
+  "react/function-component-definition": 0,
+  "no-restricted-export": 0,
+  "react/prop-types": 0,
 };
 const developmentRules = {
   "@typescript-eslint/explicit-module-boundary-types": "warn",
   "@typescript-eslint/no-explicit-any": "warn",
   "@typescript-eslint/no-unused-vars": ["warn", { args: "after-used" }],
-  "import-no-cycle": "warn",
+  "import/no-cycle": "warn",
   "jsx-a11y/anchor-is-valid": "warn",
   "prettier/prettier": "warn",
   "react/jsx-filename-extension": [
     "warn",
-    { extension: [".jsx", ".tsx"], allow: "as-needed" },
+    { extensions: [".jsx", ".tsx"], allow: "as-needed" },
   ],
-  "react-hook-rules/rules-of-hooks": "warn",
-  "react-hook-rules/exhaustive-deps": "warn",
+  "react-hooks/rules-of-hooks": "warn",
+  "react-hooks/exhaustive-deps": "warn",
   "consistent-return": "warn",
   curly: ["warn", "all"],
   eqeqeq: ["warn", "always"],
@@ -52,19 +55,19 @@ const developmentRules = {
     },
   ],
   "no-useless-return": "warn",
-  "pddding-line-bettwen-statements": [
+  "padding-line-between-statements": [
     "warn",
-    { blankLine: "always", prev: "*", next: "return" },
-    { blankLine: "always", prev: "block-line", next: "*" },
+    { blankLine: "always", prev: ["*"], next: "return" },
+    { blankLine: "always", prev: ["block-like"], next: "*" },
   ],
 };
 
 module.exports = {
   root: true,
   parser: "@typescript-eslint/parser",
-  plugin: [
+  plugins: [
     "react",
-    "react-hook",
+    "react-hooks",
     "jsx-a11y",
     "@typescript-eslint",
     "import",

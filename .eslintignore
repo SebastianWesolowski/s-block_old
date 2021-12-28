@@ -1,6 +1,8 @@
 node_modules
 distTS
-lib
+lib/*
 *.scss
 *.svg
 .eslintrc.js
+.storybook/**
+dist/*

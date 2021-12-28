@@ -28,7 +28,8 @@
     "format:check:staged": "prettier --check --ignore-unknown --json-recursive-sort",
     "style:check": "stylelint \"src/**/*.+(scss|css)\" --cache",
     "style:check:staged": "stylelint \"*.{scss,css}\" --cache",
-    "style:fix": "run-s format \"style:check -- --fix\""
+    "style:fix": "run-s format \"style:check -- --fix\"",
+    "commit": "git-cz"
   },
   "dependencies": {
     "@babel/core": "^7.16.5",
@@ -65,6 +66,7 @@
     "autoprefixer": "^10.4.0",
     "babel-loader": "^8.0.0",
     "copyfiles": "^2.4.1",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.5.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^16.1.0",

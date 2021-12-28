@@ -16,7 +16,7 @@
     "compile:alias": "tsc-alias -p ./tsconfig.compile.json",
     "compile:copy": "copyfiles -u 1 \"./src/**/*(png|svg|scss)\"  distTS",
     "build:clear": "rimraf distTS",
-    "semantic-release": "semantic-release --branch master",
+    "semantic-release": "semantic-release --branches main",
     "lint": "run-s format:check lint:parallel",
     "lint:parallel": "run-p lint:check style:check",
     "lint:check": "eslint \"./src/**/*.+(js|jsx|ts|tsx)\" --cache",
@@ -29,6 +29,7 @@
     "style:check": "stylelint \"src/**/*.+(scss|css)\" --cache",
     "style:check:staged": "stylelint \"*.{scss,css}\" --cache",
     "style:fix": "run-s format \"style:check -- --fix\"",
+    "acp": "git add . && npm run commit && git push",
     "commit": "git-cz"
   },
   "dependencies": {

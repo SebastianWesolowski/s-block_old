@@ -1,0 +1,16 @@
+{
+  "absolute": true,
+  "format": "javascript, jsx, typesctipt, tsx, typescriptreact",
+  ",ignore": [
+    "**/*.spec.tsx",
+    "**/*.spec.jsx",
+    "**/*.test.tsx",
+    "**/*.spec.ts",
+    "**/*.spec.js",
+    "**/*.d.ts",
+    "**/*.test.jsx",
+    "**/*.test.ts",
+    "**/*.test.js"
+  ],
+  "reshold": "1"
+}

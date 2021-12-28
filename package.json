@@ -6,7 +6,7 @@
     "build:react": "react-scripts build",
     "build": "run-s compile rollup:build",
     "rollup:build": "rollup -c",
-    "test": "react-scripts test --watchAll=false --passWithNoTests",
+    "test": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
@@ -64,7 +64,6 @@
     "@typescript-eslint/parser": "^5.8.1",
     "autoprefixer": "^10.4.0",
     "babel-loader": "^8.0.0",
-    "chokidar": "^3.5.2",
     "copyfiles": "^2.4.1",
     "eslint": "^8.5.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -99,7 +98,6 @@
     "tslib": "^2.3.1",
     "typescript": "^4.5.4",
     "typescript-plugin-css-modules": "^3.4.0",
-    "uuid": "^8.3.2",
     "webpack": "^5.65.0"
   },
   "peerDependencies": {

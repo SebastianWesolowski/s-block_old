@@ -20,7 +20,6 @@ jobs:
         os: [ubuntu-latest, windows-latest]
 
     steps:
-      - name: 📚 Checkout
       - uses: actions/checkout@v2
       - name: 🟢 Setup Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
@@ -35,7 +34,6 @@ jobs:
     if: ${{ github.ref == 'refs/heads/main' }}
     needs: [quality]
     steps:
-      - name: 📚 Checkout
       - uses: actions/checkout@v2
       - name: 🟢 Setup Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2

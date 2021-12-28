@@ -20,8 +20,10 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
+        timeout-minutes: 5
       - name: Checkout
         uses: actions/checkout@v2.4.0
+        timeout-minutes: 5
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2.5.0
         with:

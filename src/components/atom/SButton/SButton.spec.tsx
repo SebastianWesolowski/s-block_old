@@ -7,7 +7,7 @@ describe("Components", () => {
       it("should render without errors", () => {
         const view = render(<SButton label={"Button"} />);
         console.log(view.container.innerHTML);
-        expect(view).toBeDefined();
+        expect(view).toBeTruthy();
       });
     });
   });

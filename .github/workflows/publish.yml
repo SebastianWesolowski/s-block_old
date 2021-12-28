@@ -12,6 +12,7 @@ on:
 jobs:
   quality:
     runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
 
     strategy:
       matrix:
@@ -20,39 +21,11 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-        timeout-minutes: 5
-      - name: Checkout
+      - name: checkout
         uses: actions/checkout@v2.4.0
-        timeout-minutes: 5
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2.5.0
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
       - run: npm test
-
-  #   steps:
-  #     - name: 📚 Checkout
-  #       uses: actions/checkout@v2.4.0
-  #     - name: 🟢 Setup Node.js environment
-  #       uses: actions/setup-node@v2.5.0
-  #       with:
-  #         node-version: ${{ matrix.node-version }}
-  #       - run: npm ci
-  #       - run: npm test
-  # publish:
-  #   runs-on: ubuntu-latest
-  #   if: ${{ github.ref == 'refs/heads/main' }}
-  #   needs: [quality]
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2.4.0
-  #     - name: 🟢 node
-  #       uses: actions/setup-node@v2
-  #       with:
-  #         node-version: ${{ matrix.node-version }}
-  #       - run: npm ci
-  #       - run: npm run semantic-release
-  #       env:
-  #         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-  #         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}

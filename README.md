@@ -4,7 +4,7 @@ S-Block React Component Library
 
 ![npm](https://img.shields.io/npm/v/s-block)
 
-## Sponsor
+### Sponsor
 
 <a href="https://wesolowski.dev"><img src="./readme-img/wesolowski.dev_logo.svg" alt="Link to blog wesolowski.dev" width="200" height="200"></a>
 

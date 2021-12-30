@@ -10,30 +10,30 @@ on:
     branches: ["*"]
 
 jobs:
-  quality:
-    runs-on: ${{ matrix.os }}
+  # quality:
+  #   runs-on: ${{ matrix.os }}
 
-    strategy:
-      matrix:
-        # node-version: [14.x, 15.x, 16.x, 17.x]
-        node-version: [14.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-        os: [ubuntu-latest, windows-latest]
+  #   strategy:
+  #     matrix:
+  #       # node-version: [14.x, 15.x, 16.x, 17.x]
+  #       node-version: [14.x]
+  #       # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+  #       os: [ubuntu-latest, windows-latest]
 
-    steps:
-      - uses: actions/checkout@v2
-      - name: 🟢 Setup Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: "npm"
-      - run: npm ci
-      - run: npm test
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: 🟢 Setup Node.js ${{ matrix.node-version }}
+  #       uses: actions/setup-node@v2
+  #       with:
+  #         node-version: ${{ matrix.node-version }}
+  #         cache: "npm"
+  #     - run: npm ci
+  #     - run: npm test
 
   publish:
     runs-on: ubuntu-latest
     if: ${{ github.ref == 'refs/heads/main' }}
-    needs: [quality]
+    # needs: [quality]
     steps:
       - uses: actions/checkout@v2
       - name: 🟢 Setup Node.js ${{ matrix.node-version }}

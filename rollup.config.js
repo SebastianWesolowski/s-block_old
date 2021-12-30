@@ -2,9 +2,10 @@ import { babel } from "@rollup/plugin-babel";
 import resolve from "@rollup/plugin-node-resolve";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import { terser } from "rollup-plugin-terser";
-import postcss from "rollup-plugin-postcss";
+// import postcss from "rollup-plugin-postcss";
 import dts from "rollup-plugin-dts";
 import commonjs from "@rollup/plugin-commonjs";
+import scss from "rollup-plugin-scss";
 
 import packageJson from "./package.json";
 
@@ -18,10 +19,13 @@ const config = [
         compact: true,
       },
     ],
-
-    plugins: [dts()],
+    plugins: [
+      dts(),
+      scss({
+        output: false,
+      }),
+    ],
   },
-
   {
     input: "./distTS/index.js",
     output: [
@@ -41,6 +45,7 @@ const config = [
       resolve({
         browser: true,
       }),
+
       commonjs(),
       babel({
         comments: false,
@@ -49,9 +54,9 @@ const config = [
         exclude: "node_modules/**",
         presets: ["@babel/preset-react"],
       }),
-      postcss({
-        plugins: [],
-        minimize: true,
+      scss({
+        output: "lib/main.css",
+        outputStyle: "compressed",
       }),
       terser(),
     ],

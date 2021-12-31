@@ -1,10 +1,8 @@
+import { FC } from "react";
 import { SButtonProps } from "./types";
 import "./SButton.scss";
 
-/**
- * Primary UI component for user interaction
- */
-export const SButton: React.FC<SButtonProps> = ({
+export const SButton: FC<SButtonProps> = ({
   primary = false,
   size = "medium",
   backgroundColor,

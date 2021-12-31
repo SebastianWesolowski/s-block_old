@@ -34,6 +34,10 @@
   },
   "dependencies": {
     "@babel/core": "^7.16.5",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.2.5",
+    "@mui/material": "^5.2.6",
+    "@mui/styled-engine-sc": "^5.1.0",
     "@storybook/react": "^6.4.9",
     "@types/testing-library__jest-dom": "^5.14.2",
     "web-vitals": "^2.1.2"

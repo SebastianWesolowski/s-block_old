@@ -8,6 +8,37 @@ import scss from "rollup-plugin-scss";
 
 import packageJson from "./package.json";
 
+const external = [
+  "react",
+  "react-dom",
+  "@emotion/styled",
+  "@mui/icons-material",
+  "@mui/material",
+  "@mui/styled-engine-sc",
+];
+
+const plugins = [
+  peerDepsExternal(),
+  resolve({
+    browser: true,
+  }),
+
+  commonjs(),
+  babel({
+    babelHelpers: "bundled",
+    comments: false,
+    compact: true,
+    minified: true,
+    exclude: "node_modules/**",
+    presets: ["@babel/preset-react"],
+  }),
+  scss({
+    output: "lib/main.css",
+    outputStyle: "compressed",
+  }),
+  terser(),
+];
+
 const config = [
   {
     input: "./distTS/index.d.ts",
@@ -24,41 +55,33 @@ const config = [
         output: false,
       }),
     ],
+    external,
   },
   {
     input: "./distTS/index.js",
     output: [
       {
-        file: packageJson.module,
+        dir: "./lib/es",
         format: "es",
         compact: true,
+        preserveModules: true,
+        preserveModulesRoot: "./distTS",
       },
+    ],
+    plugins,
+    external,
+  },
+  {
+    input: "./distTS/index.js",
+    output: [
       {
         file: packageJson.main,
         format: "cjs",
         compact: true,
       },
     ],
-    plugins: [
-      peerDepsExternal(),
-      resolve({
-        browser: true,
-      }),
-
-      commonjs(),
-      babel({
-        comments: false,
-        compact: true,
-        minified: true,
-        exclude: "node_modules/**",
-        presets: ["@babel/preset-react"],
-      }),
-      scss({
-        output: "lib/main.css",
-        outputStyle: "compressed",
-      }),
-      terser(),
-    ],
+    plugins,
+    external,
   },
 ];
 

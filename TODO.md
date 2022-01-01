@@ -6,6 +6,7 @@
 
 - [x] Eslint
 - [ ] Stylelint
+- [ ] prettier
 - [x] Jest
 - [ ] Cypress
 - [ ] Storybook visualTest

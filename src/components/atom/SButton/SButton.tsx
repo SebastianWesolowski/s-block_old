@@ -28,7 +28,9 @@ export const SButton: FC<SButtonProps> = ({
       >
         {label}
       </button>
-      <Button variant="contained">Hello World</Button>
+      <Button onClick={onClick} variant="contained">
+        Hello World
+      </Button>
     </>
   );
 };

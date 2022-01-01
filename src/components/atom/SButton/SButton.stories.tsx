@@ -1,14 +1,20 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-
 import { SButton } from "./SButton";
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
+import README from "./README.md";
+
+// // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "S/Button",
+  title: "Atom/Button",
   component: SButton,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     backgroundColor: { control: "color" },
+  },
+  parameters: {
+    readme: {
+      sidebar: README,
+    },
   },
 } as ComponentMeta<typeof SButton>;
 

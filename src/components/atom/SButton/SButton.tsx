@@ -1,10 +1,9 @@
+import { FC } from "react";
+import Button from "@mui/material/Button";
 import { SButtonProps } from "./types";
 import "./SButton.scss";
 
-/**
- * Primary UI component for user interaction
- */
-export const SButton: React.FC<SButtonProps> = ({
+export const SButton: FC<SButtonProps> = ({
   primary = false,
   size = "medium",
   backgroundColor,
@@ -17,16 +16,21 @@ export const SButton: React.FC<SButtonProps> = ({
     : "storybook-button--secondary";
 
   return (
-    <button
-      type="button"
-      className={["storybook-button", `storybook-button--${size}`, mode].join(
-        " "
-      )}
-      onClick={onClick}
-      style={{ backgroundColor }}
-      {...props}
-    >
-      {label}
-    </button>
+    <>
+      <button
+        type="button"
+        className={["storybook-button", `storybook-button--${size}`, mode].join(
+          " "
+        )}
+        onClick={onClick}
+        style={{ backgroundColor }}
+        {...props}
+      >
+        {label}
+      </button>
+      <Button onClick={onClick} variant="contained">
+        Hello World
+      </Button>
+    </>
   );
 };

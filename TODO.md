@@ -1,5 +1,5 @@
-- [ ] Dodać styled component
-- [ ] Material ui v5
+- [x] Dodać styled component
+- [x] Material ui v5
 - [ ] Utils function
 
 ## Quality

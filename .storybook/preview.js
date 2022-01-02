@@ -1,21 +1,8 @@
-// import { muiTheme } from "storybook-addon-material-ui";
+import { ThemeProvider as MUIThemeProvider } from "@mui/material/styles";
+import { ThemeProvider } from "emotion-theming";
+
 import { addReadme } from "storybook-readme";
-import { addDecorator } from "@storybook/react";
-import { ThemeProvider } from "@mui/material/styles";
 import theme from "../src/stylesheet";
-import { CssBaseline } from "@mui/material";
-
-// addDecorator(muiTheme());
-addDecorator(addReadme);
-
-export const decorators = [
-  (Story) => (
-    <ThemeProvider theme={theme}>
-      <Story />
-      <CssBaseline />
-    </ThemeProvider>
-  ),
-];
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -25,4 +12,16 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  docs: {
+    inlineStories: false,
+  },
 };
+
+export const decorators = [
+  (Story) => (
+    <MUIThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>{Story()}</ThemeProvider>
+    </MUIThemeProvider>
+  ),
+  addReadme(),
+];

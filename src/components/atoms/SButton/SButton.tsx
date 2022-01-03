@@ -1,9 +1,9 @@
 import { FC } from "react";
 import Button from "@mui/material/Button";
-import { SButtonProps } from "./types";
+import { ISButtonProps } from "./types";
 import "./SButton.scss";
 
-export const SButton: FC<SButtonProps> = ({
+export const SButton: FC<ISButtonProps> = ({
   primary = false,
   size = "medium",
   backgroundColor,

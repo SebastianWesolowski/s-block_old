@@ -1,4 +1,4 @@
-export interface SButtonProps {
+export interface ISButtonProps {
   /**
    * Is this the principal call to action on the page?
    */

@@ -16,6 +16,14 @@ Import css file from package
 import "s-block/lib/main.css";
 ```
 
+# How to develop
+
+add new componen by hygen
+
+```
+npm run new:component
+```
+
 ### Sponsor
 
 <a href="https://wesolowski.dev"><img src="./readme-img/wesolowski.dev_logo.svg" alt="Link to blog wesolowski.dev" width="200" height="200"></a>

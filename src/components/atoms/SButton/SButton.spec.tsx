@@ -2,7 +2,7 @@ import { render } from "@testing-library/react";
 import { SButton } from ".";
 
 describe("Components", () => {
-  describe("Atom", () => {
+  describe("Atoms", () => {
     describe("SButton", () => {
       it("should render without errors", () => {
         const view = render(<SButton label="Button" />);

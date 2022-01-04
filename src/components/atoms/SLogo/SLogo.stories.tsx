@@ -1,12 +1,12 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { SButton } from "./SButton";
-
+import { SvgLogoSygnet } from "s-brand";
+import { SLogo } from "./SLogo";
 import README from "./README.md";
 
 // // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Atoms/Button",
-  component: SButton,
+  title: "atoms/SLogo",
+  component: SLogo,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     backgroundColor: { control: "color" },
@@ -16,30 +16,13 @@ export default {
       sidebar: README,
     },
   },
-} as ComponentMeta<typeof SButton>;
+} as ComponentMeta<typeof SLogo>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof SButton> = (args) => (
-  <SButton {...args} />
-);
+const Template: ComponentStory<typeof SLogo> = (args) => <SLogo {...args} />;
 
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: "Button",
-};
-
-export const Large = Template.bind({});
-Large.args = {
-  size: "large",
-  label: "Button",
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: "small",
-  label: "Button",
+Primary.args = {
+  logoSrc: <SvgLogoSygnet />,
 };

@@ -1,1 +1,1 @@
-export * from "./components/atoms/SButton";
+export * from "./components/atoms/SLogo";

@@ -44,6 +44,7 @@
     "@types/styled-components": "^5.1.18",
     "@types/testing-library__jest-dom": "^5.14.2",
     "hygen": "^6.1.0",
+    "next": "^12.0.7",
     "s-brand": "^1.1.1",
     "storybook-addon-mui-mode": "^0.0.14",
     "web-vitals": "^2.1.2"

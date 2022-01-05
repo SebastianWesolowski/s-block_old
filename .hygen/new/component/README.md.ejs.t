@@ -11,3 +11,10 @@ import { SvgLogoSygnet } from "s-brand";
 
 <<%= component_name %> srcLogo={SvgLogoSygnet}/>;
 ```
+
+<!-- ## TOOD
+
+- [ ] ...
+  - [ ] ...
+  - [ ] ...
+- [ ] ... -->

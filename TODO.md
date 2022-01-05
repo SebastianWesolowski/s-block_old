@@ -20,3 +20,9 @@
   - - [ ] Logo
 
 - [ ] Footer
+
+### Inspiration
+
+https://alfa-laboratory.github.io/core-components/master/
+https://github.com/diegohaz/arc
+https://danilowoz.com/blog/atomic-design-with-react

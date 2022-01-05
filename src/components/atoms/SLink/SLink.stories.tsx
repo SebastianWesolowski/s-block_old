@@ -1,25 +1,35 @@
----
-to: <%= absPath %>/<%= component_name %>.stories.tsx
----
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { <%= component_name %> } from "./<%= component_name %>";
+import { SLink } from "./SLink";
 import README from "./README.md";
 
 // // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "<%= category %>/<%= component_name %>",
-  component: <%= component_name %>,
+  title: "atoms/SLink",
+  component: SLink,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    backgroundColor: { control: "color" },
-    dummy: {
-      name: "dummy",
+    label: {
+      name: "label",
       type: { name: "string", required: true },
-      defaultValue: "dummy value",
+      defaultValue: "Home",
       description: "Label inside",
       table: {
         type: { summary: "string" },
-        defaultValue: { summary: "dummy value" },
+        defaultValue: { summary: "Home" },
+      },
+      control: {
+        type: "text",
+      },
+    },
+    path: {
+      name: "path",
+      type: { name: "string", required: true },
+      defaultValue: "/",
+      description:
+        "The destination to which it will be moved. It used router from `NextJs`",
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: "/" },
       },
       control: {
         type: "text",
@@ -31,15 +41,11 @@ export default {
       sidebar: README,
     },
   },
-} as ComponentMeta<typeof <%= component_name %>>;
+} as ComponentMeta<typeof SLink>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof <%= component_name %>> = (args) => (
-  <<%= component_name %> {...args} />
-);
+const Template: ComponentStory<typeof SLink> = (args) => <SLink {...args} />;
 
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-  dummy: "dummy",
-};
+Primary.args = {};

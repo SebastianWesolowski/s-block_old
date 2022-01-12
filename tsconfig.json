@@ -29,5 +29,5 @@
     "typeRoots": ["node_modules/@types"]
   },
   "exclude": ["./node_modules"],
-  "include": ["src"]
+  "include": ["src", "src/setupTests.ts", "jest.config.ts"]
 }

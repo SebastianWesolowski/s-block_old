@@ -11,6 +11,7 @@ import packageJson from "./package.json";
 const external = [
   "react",
   "react-dom",
+  "next/link",
   "@emotion/styled",
   "@mui/icons-material",
   "@mui/material",

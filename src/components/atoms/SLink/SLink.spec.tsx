@@ -1,14 +1,15 @@
-import { render, screen } from "@testing-library/react";
-import { SLink } from ".";
+import { shallow } from "enzyme";
+import { SLink } from "./SLink";
+
+const wrap = ({ label = "" }) =>
+  shallow(<SLink path="/" label={label} />).dive();
 
 describe("Components", () => {
   describe("atoms", () => {
     describe("SLink", () => {
-      it("should render without errors", () => {
-        const view = render(<SLink path="/" label="Home" />);
-        const element = screen.findByText("Home");
-        expect(element).toBeDefined();
-        expect(view).toBeTruthy();
+      it("renders children when passed in", () => {
+        const wrapper = wrap({ label: "Home" });
+        expect(wrapper.contains("Home")).toBe(true);
       });
     });
   });

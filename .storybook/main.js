@@ -30,6 +30,11 @@ module.exports = {
       pages: path.resolve(__dirname, "../src/components/pages"),
       types: path.resolve(__dirname, "../src/components/types"),
     });
+    Object.assign(config.resolve.fallback, {
+      "crypto-browserify": require.resolve("crypto-browserify"),
+      crypto: require.resolve("crypto-browserify"),
+      stream: require.resolve("stream-browserify"),
+    });
 
     // Return the altered config
     return config;

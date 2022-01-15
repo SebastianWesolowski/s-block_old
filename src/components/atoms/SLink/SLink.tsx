@@ -1,6 +1,5 @@
 import { Link as MUILink } from "@mui/material";
 import { FC } from "react";
-import "./SLink.scss";
 import Link from "next/link";
 import { ESLinkTestId, ISLinkProps } from "./types";
 

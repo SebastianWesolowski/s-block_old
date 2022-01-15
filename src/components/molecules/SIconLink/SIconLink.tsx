@@ -1,6 +1,5 @@
 import { Box } from "@mui/material";
 import { FC, ReactElement } from "react";
-import "./SIconLink.scss";
 import { Theme } from "@mui/material/styles";
 import { SLink } from "atoms/SLink";
 import { ISIconLinkProps } from "./types";

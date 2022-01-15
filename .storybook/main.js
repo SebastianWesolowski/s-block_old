@@ -19,7 +19,6 @@ module.exports = {
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
     // You can change the configuration based on that.
     // 'PRODUCTION' is used when building the static version of storybook.
-    console.log(config.resolve.alias);
     // Make whatever fine-grained changes you need
 
     Object.assign(config.resolve.alias, {
@@ -32,7 +31,6 @@ module.exports = {
       types: path.resolve(__dirname, "../src/components/types"),
     });
 
-    console.log(config.resolve.alias);
     // Return the altered config
     return config;
   },

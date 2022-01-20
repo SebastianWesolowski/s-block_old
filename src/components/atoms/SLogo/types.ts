@@ -1,5 +1,12 @@
 import { ReactElement } from "react";
 
 export interface ISLogoProps {
-  logoSrc: ReactElement;
+  logoAssets: ILogoAssets;
+  height?: number;
+  isShowSygnet?: boolean;
+}
+
+export interface ILogoAssets {
+  sygnet?: ReactElement;
+  logo: ReactElement;
 }

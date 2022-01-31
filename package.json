@@ -50,7 +50,7 @@
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.6",
     "enzyme": "^3.11.0",
     "hygen": "^6.1.0",
-    "next": "^12.0.7",
+    "next": "^12.0.9",
     "s-brand": "^1.2.0",
     "storybook-addon-mui-mode": "^0.0.14",
     "web-vitals": "^2.1.2"

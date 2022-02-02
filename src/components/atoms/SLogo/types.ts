@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 
 export interface ISLogoProps {
   logoAssets: ILogoAssets;
-  height?: number | string;
+  height?: number;
   isShowSygnet?: boolean;
 }
 

@@ -12,9 +12,9 @@ export const Container = styled(Box)({
 });
 
 export const LogoContainer = styled(Box)({
+  padding: theme.spacing(2),
   display: "flex",
   height: "100%",
-  width: "100%",
   justifyContent: "flex-start",
   svg: {
     height: "100%",

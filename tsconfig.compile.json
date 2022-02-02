@@ -4,7 +4,6 @@
     "noEmit": false,
     "noImplicitAny": true,
     "outDir": "./distTS",
-    "isolatedModules": true,
     "paths": {
       "components": ["./src/components"],
       "components/*": ["./src/components/*"],

@@ -1,21 +1,8 @@
+import { Box } from "@mui/material";
 import { FC } from "react";
+import "./SLogo.scss";
 import { ISLogoProps } from "./types";
-import { LogoContainer, Container } from "./styled";
 
-export const SLogo: FC<ISLogoProps> = ({
-  height = 80,
-  isShowSygnet = false,
-  logoAssets: { logo, sygnet = null },
-}) => {
-  const Logo = () => logo;
-  const Sygnet = () => sygnet;
-
-  // return <Box className="SLogo__container">{logoSrc}</Box>;
-  return (
-    <Container height={height}>
-      <LogoContainer>
-        {isShowSygnet && sygnet ? <Sygnet /> : <Logo />}
-      </LogoContainer>
-    </Container>
-  );
+export const SLogo: FC<ISLogoProps> = ({ logoSrc }) => {
+  return <Box className="SLogo__container">{logoSrc}</Box>;
 };

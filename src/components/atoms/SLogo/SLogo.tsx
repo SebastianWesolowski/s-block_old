@@ -10,6 +10,7 @@ export const SLogo: FC<ISLogoProps> = ({
   const Logo = () => logo;
   const Sygnet = () => sygnet;
 
+  // return <Box className="SLogo__container">{logoSrc}</Box>;
   return (
     <Container height={height}>
       <LogoContainer>

@@ -29,7 +29,6 @@
     "./src/setupTests.ts",
     "./src/index.tsx",
     "./src/react-app-env.d.ts",
-    "./src/reportWebVitals.ts",
     "./src/setupTests.ts"
   ],
   "extends": "./tsconfig.json",

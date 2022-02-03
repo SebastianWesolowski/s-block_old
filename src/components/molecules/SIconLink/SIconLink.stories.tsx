@@ -2,7 +2,6 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { SvgLogoSygnet } from "s-brand";
 import AccessAlarmIcon from "@mui/icons-material/AccessAlarm";
 import AddIcon from "@mui/icons-material/Add";
-import { Facebook, Instagram, YouTube } from "@mui/icons-material";
 import { SIconLink } from "./SIconLink";
 import README from "./README.md";
 
@@ -40,13 +39,6 @@ PrimaryLeft.args = {
   position: "left",
   icon: <AddIcon sx={{ fontSize: 14 }} />,
 };
-
-export const EmptyLabel = Template.bind({});
-EmptyLabel.args = {
-  label: undefined,
-  icon: <AddIcon sx={{ fontSize: 14 }} />,
-};
-
 export const ManyItems: ComponentStory<typeof SIconLink> = (args) => (
   <>
     <div style={{ display: "flex" }}>
@@ -65,39 +57,6 @@ export const ManyItems: ComponentStory<typeof SIconLink> = (args) => (
       <SIconLink {...args} label="" />
       <SIconLink {...args} />
       <SIconLink {...args} />
-    </div>
-  </>
-);
-
-export const OnlyIcons: ComponentStory<typeof SIconLink> = (args) => (
-  <>
-    <div style={{ display: "flex" }}>
-      <SIconLink
-        path="https://YourFacebookLink/"
-        icon={<Facebook fontSize="large" />}
-      />
-      <SIconLink
-        path="https://YourFacebookLink/"
-        icon={<Instagram fontSize="large" />}
-      />
-      <SIconLink
-        path="https://YourFacebookLink/"
-        icon={<YouTube fontSize="large" />}
-      />
-    </div>
-    <div style={{ display: "flex", flexDirection: "column" }}>
-      <SIconLink
-        path="https://YourFacebookLink/"
-        icon={<Facebook fontSize="large" />}
-      />
-      <SIconLink
-        path="https://YourFacebookLink/"
-        icon={<Instagram fontSize="large" />}
-      />
-      <SIconLink
-        path="https://YourFacebookLink/"
-        icon={<YouTube fontSize="large" />}
-      />
     </div>
   </>
 );

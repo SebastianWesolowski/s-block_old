@@ -11,28 +11,14 @@ export const SIconLink: FC<ISIconLinkProps> = ({
   label,
 }) => {
   const iconWithLabel = (): ReactElement => {
-    const iconContainer: any = {
-      px: 1,
-      pb: "8px",
-      pt: "4px",
-      display: "flex",
-      alignItems: "center",
-    };
-
-    const containerStyle = {
+    const style = {
       display: "flex",
       pl: 1,
-      height: (theme: Theme) => {
-        if (label) {
-          return `${theme.typography.body2.lineHeight}rem`;
-        }
-
-        return "inherit";
-      },
+      height: (theme: Theme) => `${theme.typography.body2.lineHeight}rem`,
     };
 
     if (position === "left") {
-      Object.assign(containerStyle, {
+      Object.assign(style, {
         alignContent: "flex-start",
         justifyContent: "flex-end",
         flexDirection: "row-reverse",
@@ -41,25 +27,17 @@ export const SIconLink: FC<ISIconLinkProps> = ({
       });
     }
 
-    if (!label || (typeof label === "string" && label.length === 0)) {
-      Object.assign(containerStyle, {
+    if (typeof label === "string" && label.length === 0) {
+      Object.assign(style, {
         pl: 0,
         pr: 0,
       });
-
-      Object.assign(iconContainer, {
-        p: 1,
-      });
-
-      delete iconContainer.px;
-      delete iconContainer.pb;
-      delete iconContainer.pt;
     }
 
     return (
-      <Box sx={containerStyle}>
-        {label ?? label}
-        <Box sx={iconContainer}>{icon}</Box>
+      <Box sx={style}>
+        {label}
+        <Box sx={{ px: 1, pb: "8px", pt: "4px", display: "flex" }}>{icon}</Box>
       </Box>
     );
   };

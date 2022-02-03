@@ -13,8 +13,6 @@ import { SvgLogoSygnet } from "s-brand";
 />;
 
 <SIconLink path="/" label="Home" icon={<SvgLogoSygnet />} />;
-
-<SIconLink path="/" icon={<SvgLogoSygnet />} />;
 ```
 
 <!-- ## TOOD

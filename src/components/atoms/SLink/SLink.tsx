@@ -7,7 +7,7 @@ export const SLink: FC<ISLinkProps> = ({ path, label }) => {
   return (
     <Link href={path}>
       <MUILink
-        sx={{ cursor: "pointer", color: "inherit" }}
+        sx={{ cursor: "pointer" }}
         variant="body2"
         underline="hover"
         data-testid={ESLinkTestId.label}

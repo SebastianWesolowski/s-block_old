@@ -2,6 +2,7 @@ import { Box } from "@mui/material";
 import { FC, ReactElement } from "react";
 import { Theme } from "@mui/material/styles";
 import { SLink } from "atoms/SLink";
+import { SxProps } from "@mui/system";
 import { ISIconLinkProps } from "./types";
 
 export const SIconLink: FC<ISIconLinkProps> = ({
@@ -11,7 +12,7 @@ export const SIconLink: FC<ISIconLinkProps> = ({
   label,
 }) => {
   const iconWithLabel = (): ReactElement => {
-    const iconContainer: any = {
+    const iconContainer: SxProps = {
       px: 1,
       pb: "8px",
       pt: "4px",

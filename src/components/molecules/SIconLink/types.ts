@@ -1,7 +1,8 @@
-import { ISLinkProps } from "atoms/SLink/types";
 import { ReactElement } from "react";
 
-export interface ISIconLinkProps extends ISLinkProps {
+export interface ISIconLinkProps {
+  path: string;
   icon: ReactElement;
+  label?: string | ReactElement;
   position?: "left" | "right";
 }

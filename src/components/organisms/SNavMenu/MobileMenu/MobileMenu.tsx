@@ -22,7 +22,7 @@ export const MobileMenu: FC<IMobileMenuProps> = ({
   isOpenMenu,
   onHandleClickMenu,
 }) => {
-  console.log("🚀 ~ file: MobileMenu.tsx ~ line 18 ~ isOpenMenu,", isOpenMenu);
+  // console.log("🚀 ~ file: MobileMenu.tsx ~ line 18 ~ isOpenMenu,", isOpenMenu);
 
   if (!isOpenMenu) {
     return null;
@@ -32,7 +32,7 @@ export const MobileMenu: FC<IMobileMenuProps> = ({
     <Container>
       <SLogo logoAssets={logoAssets} height="100%" />
       <List component="nav" aria-label="top navigation">
-        <ListItemButton component="a" >
+        <ListItemButton component="a">
           <ListItem>
             <ListItemText primary="Kalendarz webinarów" />
           </ListItem>

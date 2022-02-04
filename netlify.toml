@@ -1,0 +1,6 @@
+[build]
+  publish = "storybook-static"
+  command = "npm run build-storybook"
+[[plugins]]
+package = "@netlify/plugin-nextjs"
+NETLIFY_NEXT_PLUGIN_SKIP = true

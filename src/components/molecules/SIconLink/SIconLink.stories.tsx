@@ -69,7 +69,7 @@ export const ManyItems: ComponentStory<typeof SIconLink> = (args) => (
   </>
 );
 
-export const OnlyIcons: ComponentStory<typeof SIconLink> = (args) => (
+export const OnlyIcons: ComponentStory<typeof SIconLink> = () => (
   <>
     <div style={{ display: "flex" }}>
       <SIconLink

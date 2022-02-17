@@ -5,17 +5,15 @@ import { ESLinkTestId, ISLinkProps } from "./types";
 import { StyledLink } from "./styled";
 
 export const SLink: FC<ISLinkProps> = ({ path, label, target, rel }) => {
+  const textStyle = { cursor: "pointer", color: "inherit" };
+
   if (target) {
     return (
-      // eslint-disable-next-line react/jsx-no-target-blank
       <StyledLink href={path} target="_blank" rel={rel || "noopener"}>
         <Typography
           component="span"
           variant="body2"
-          color="inherit"
-          sx={{
-            cursor: "pointer",
-          }}
+          sx={textStyle}
           data-testid={ESLinkTestId.label}
         >
           {label}
@@ -27,7 +25,7 @@ export const SLink: FC<ISLinkProps> = ({ path, label, target, rel }) => {
   return (
     <Link href={path} passHref>
       <MUILink
-        sx={{ cursor: "pointer", color: "inherit" }}
+        sx={textStyle}
         variant="body2"
         underline="hover"
         data-testid={ESLinkTestId.label}

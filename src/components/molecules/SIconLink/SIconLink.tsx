@@ -10,6 +10,8 @@ export const SIconLink: FC<ISIconLinkProps> = ({
   position = "right",
   path,
   label,
+  target,
+  rel,
 }) => {
   const iconWithLabel = (): ReactElement => {
     const iconContainer: SxProps = {
@@ -65,5 +67,7 @@ export const SIconLink: FC<ISIconLinkProps> = ({
     );
   };
 
-  return <SLink path={path} label={iconWithLabel()} />;
+  return (
+    <SLink path={path} label={iconWithLabel()} target={target} rel={rel} />
+  );
 };

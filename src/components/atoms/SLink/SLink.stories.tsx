@@ -49,3 +49,9 @@ const Template: ComponentStory<typeof SLink> = (args) => <SLink {...args} />;
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {};
+
+export const PrimaryTarget = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+PrimaryTarget.args = {
+  target: "_blank",
+};

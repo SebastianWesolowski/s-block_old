@@ -101,3 +101,48 @@ export const OnlyIcons: ComponentStory<typeof SIconLink> = () => (
     </div>
   </>
 );
+
+export const OnlyIconsExternalLink: ComponentStory<typeof SIconLink> = () => (
+  <>
+    <div style={{ display: "flex" }}>
+      <SIconLink
+        path="https://YourFacebookLink/"
+        target="_blank"
+        rel="noopener"
+        icon={<Facebook fontSize="large" />}
+      />
+      <SIconLink
+        path="https://YourFacebookLink/"
+        target="_blank"
+        rel="noreferrer"
+        icon={<Instagram fontSize="large" />}
+      />
+      <SIconLink
+        path="https://YourFacebookLink/"
+        target="_blank"
+        rel="noopener noreferrer"
+        icon={<YouTube fontSize="large" />}
+      />
+    </div>
+    <div style={{ display: "flex", flexDirection: "column" }}>
+      <SIconLink
+        path="https://YourFacebookLink/"
+        target="_blank"
+        rel="noopener"
+        icon={<Facebook fontSize="large" />}
+      />
+      <SIconLink
+        path="https://YourFacebookLink/"
+        target="_blank"
+        rel="noreferrer"
+        icon={<Instagram fontSize="large" />}
+      />
+      <SIconLink
+        path="https://YourFacebookLink/"
+        target="_blank"
+        rel="noopener noreferrer"
+        icon={<YouTube fontSize="large" />}
+      />
+    </div>
+  </>
+);

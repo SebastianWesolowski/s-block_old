@@ -22,8 +22,6 @@ export const MobileMenu: FC<IMobileMenuProps> = ({
   isOpenMenu,
   onHandleClickMenu,
 }) => {
-  // console.log("🚀 ~ file: MobileMenu.tsx ~ line 18 ~ isOpenMenu,", isOpenMenu);
-
   if (!isOpenMenu) {
     return null;
   }

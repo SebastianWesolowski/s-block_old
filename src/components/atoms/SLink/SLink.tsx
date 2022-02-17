@@ -1,4 +1,4 @@
-import { Link as MUILink, Typography, Button } from "@mui/material";
+import { Link as MUILink, Typography } from "@mui/material";
 import { FC } from "react";
 import Link from "next/link";
 import { ESLinkTestId, ISLinkProps } from "./types";
@@ -8,7 +8,6 @@ export const SLink: FC<ISLinkProps> = ({ path, label, target, rel }) => {
   if (target) {
     return (
       // eslint-disable-next-line react/jsx-no-target-blank
-      // <StyledLink href={path} target="_blank" rel={rel || "noopener"}>
       <StyledLink href={path} target="_blank" rel={rel || "noopener"}>
         <Typography
           component="span"
@@ -22,7 +21,6 @@ export const SLink: FC<ISLinkProps> = ({ path, label, target, rel }) => {
           {label}
         </Typography>
       </StyledLink>
-      // </StyledLink>
     );
   }
 

@@ -3,7 +3,13 @@ import { FC } from "react";
 import Link from "next/link";
 import { ESLinkTestId, ISLinkProps } from "./types";
 
-export const SLink: FC<ISLinkProps> = ({ path, label, target, rel }) => {
+export const SLink: FC<ISLinkProps> = ({
+  path,
+  label,
+  target,
+  rel,
+  ariaLabel,
+}) => {
   const textStyle = {
     cursor: "pointer",
     color: "inherit",
@@ -22,6 +28,7 @@ export const SLink: FC<ISLinkProps> = ({ path, label, target, rel }) => {
         href={path}
         target="_blank"
         rel={rel || "noopener"}
+        aria-label={ariaLabel || "link"}
         data-testid={ESLinkTestId.label}
       >
         {label}

@@ -11,6 +11,7 @@ export const SIconLink: FC<ISIconLinkProps> = ({
   path,
   label,
   target,
+  ariaLabel,
   rel,
 }) => {
   const iconWithLabel = (): ReactElement => {
@@ -68,6 +69,12 @@ export const SIconLink: FC<ISIconLinkProps> = ({
   };
 
   return (
-    <SLink path={path} label={iconWithLabel()} target={target} rel={rel} />
+    <SLink
+      path={path}
+      label={iconWithLabel()}
+      target={target}
+      ariaLabel={ariaLabel}
+      rel={rel}
+    />
   );
 };

@@ -3,7 +3,7 @@
 - [ ] Utils function
 
 ## Quality
-
+- [ ] Lerna
 - [x] Eslint
 - [ ] Stylelint
 - [ ] prettier
